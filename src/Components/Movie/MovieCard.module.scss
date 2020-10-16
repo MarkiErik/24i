@@ -1,0 +1,25 @@
+.card {
+  height: 350px;
+  overflow: hidden;
+  position: relative;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+ .title {
+    position: absolute;
+    background: white;
+    color: black;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    min-height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    box-shadow: 0px -10px 20px 12px white;
+  }
+}

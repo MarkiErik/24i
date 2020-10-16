@@ -1,0 +1,143 @@
+.detailPage {
+  color: aliceblue;
+  padding: 25px 0;
+  display: flex;
+  align-items: center;
+  overflow-y: scroll;
+  
+  .detailPageRow {
+    max-width: 720px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .detailContent {
+    width: 100%;
+    max-width: 720px;
+    display: flex;
+    overflow: hidden;
+  }
+
+  .detailLeft {
+    width: 50%;
+    flex: 1;
+
+    img {
+      width: auto;
+      height: auto;
+      max-height: 500px;
+    }
+  }
+
+  .detailTitle {
+    width: 100%;
+    text-align: center;
+
+    h2 {
+      font-size: 44px;
+      color: gold;
+    }
+  }
+  hr {
+    border-color: gold;
+  }
+
+  .detailRight {
+    width: 50%;
+    flex: 1;
+    box-shadow: -5px 0px 70px 80px #282d33;
+
+    p {
+      font-size: 20px;
+      line-height: 30px;
+      text-align: justify;
+      padding-left: 20px;
+      margin-top: 0;
+
+      span {
+        color: gold;
+      }
+    }
+  }
+
+  .playBtn {
+    border: 4px solid white;
+    width: 120px;
+    height: 60px;
+    font-size: 25px;
+    background: #282d33;
+    color: white;
+    padding: 5px;
+    box-sizing: border-box;
+    text-transform: capitalize;
+    
+    &:hover {
+      border-color: gold;
+      color: gold;
+    }
+  }
+}
+
+.videoBackground {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  background:black;
+  justify-content: center;
+  align-items: center;
+
+  h3 {
+    color: white;
+    font-size: 30px;
+  }
+
+  .video {
+    width: 640px;
+    position: relative;
+  }
+}
+
+.crossBtn {
+  position: absolute;
+  z-index: 2;
+  top: -60px;
+  left: 100%;
+  visibility: hidden;
+  width: 0px;
+  height: 0;
+  padding: 0;
+  border: 0;
+  margin: 0;
+
+  &:before {
+    content: '\2718';
+    background-color: White;
+    color: black;
+    visibility: visible;
+    font-size: 50px;
+    height: 60px;
+    width: 60px;
+    display: block;
+    background: none;
+    border-radius: 50%;
+    box-shadow: inset 0px 0px 20px 17px white;
+  }
+}
+
+
+@media only screen and (max-width: 768px) {
+  .detailContent {
+    flex-direction: column;
+  }
+  .detailPage {
+    .detailLeft,
+    .detailRight {
+      width: 100%;
+    }
+  }
+}
+
