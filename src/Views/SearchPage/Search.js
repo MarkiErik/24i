@@ -5,7 +5,7 @@ import { SEARCH_URL } from '../../configuration'
 import { MovieSearchList } from './MovieSearchList'
 
 export const Search = () => {
-	const [searchQuery, setSearchQuery] = useState({})
+	const [searchQuery, setSearchQuery] = useState([])
 	const [error, setError] = useState(null)
 
 	const handleSearchFormSubmit = (data) => {

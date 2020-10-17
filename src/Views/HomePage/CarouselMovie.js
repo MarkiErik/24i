@@ -111,7 +111,7 @@ export const CarouselMovie = ({ url, genre, typeMovie, pages }) => {
 }
 
 CarouselMovie.propTypes = {
-	genre: PropTypes.string,
+	genre: PropTypes.number,
 	url: PropTypes.string,
 	typeMovie: PropTypes.string,
 	pages: PropTypes.number,
