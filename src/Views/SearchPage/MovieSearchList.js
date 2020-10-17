@@ -22,5 +22,5 @@ export const MovieSearchList = (props) => {
 }
 
 MovieSearchList.propTypes = {
-	list: PropTypes.array,
+	list: PropTypes.array.isRequired,
 }

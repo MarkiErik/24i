@@ -112,11 +112,12 @@ export const CarouselMovie = ({ url, genre, typeMovie, pages }) => {
 
 CarouselMovie.propTypes = {
 	genre: PropTypes.number,
-	url: PropTypes.string,
+	url: PropTypes.string.isRequired,
 	typeMovie: PropTypes.string,
 	pages: PropTypes.number,
 }
 
 CarouselMovie.defaultProps = {
 	pages: 1,
+	typeMovie: 'original_title',
 }
