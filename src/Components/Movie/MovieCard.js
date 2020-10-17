@@ -1,4 +1,6 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+
 import { IMAGE_BASE_URL } from '../../configuration'
 import styles from './MovieCard.module.scss'
 
@@ -18,4 +20,9 @@ export const MovieCard = ({ poster_path, original_title }) => {
 			)}
 		</div>
 	)
+}
+
+MovieCard.propTypes = {
+	poster_path: PropTypes.string,
+	original_title: PropTypes.string,
 }

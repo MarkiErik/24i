@@ -1,4 +1,6 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+
 import { MovieCard } from '../../Components/Movie/MovieCard'
 import styles from './MovieSearchList.module.scss'
 
@@ -18,4 +20,8 @@ export const MovieSearchList = (props) => {
 				))}
 		</div>
 	)
+}
+
+MovieSearchList.propTypes = {
+	list: PropTypes.array,
 }

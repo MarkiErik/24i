@@ -1,4 +1,6 @@
 import React, { useRef } from 'react'
+import PropTypes from 'prop-types'
+
 import styles from './MovieSearchForm.module.scss'
 
 export const MovieSearchForm = (props) => {
@@ -33,4 +35,8 @@ export const MovieSearchForm = (props) => {
 			</div>
 		</div>
 	)
+}
+
+MovieSearchForm.propTypes = {
+	onSearch: PropTypes.func,
 }
