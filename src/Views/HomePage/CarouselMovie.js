@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useMemo } from 'react'
 import Slider from 'react-slick'
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
 import { MovieCard } from '../../Components/Movie/MovieCard'
 import { detailMoviePage } from '../../configuration'
@@ -17,7 +18,7 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import './slick.css'
 
-export const CarouselMovie = ({ url, genre, typeMovie, pages = 1 }) => {
+export const CarouselMovie = ({ url, genre, typeMovie, pages }) => {
 	const sliderSettings = {
 		dots: false,
 		infinite: false,
@@ -81,7 +82,7 @@ export const CarouselMovie = ({ url, genre, typeMovie, pages = 1 }) => {
 		}
 
 		getData()
-	}, [])
+	}, [genre, pages, url])
 
 	return (
 		<div className={styles.carousel}>
@@ -107,4 +108,15 @@ export const CarouselMovie = ({ url, genre, typeMovie, pages = 1 }) => {
 			)}
 		</div>
 	)
+}
+
+CarouselMovie.propTypes = {
+	genre: PropTypes.string,
+	url: PropTypes.string,
+	typeMovie: PropTypes.string,
+	pages: PropTypes.number,
+}
+
+CarouselMovie.defaultProps = {
+	pages: 1,
 }

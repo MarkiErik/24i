@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback, useMemo } from 'react'
+import React, { useEffect, useState, useCallback } from 'react'
 import { useParams, useLocation } from 'react-router-dom'
 import { fetchData, getTitleByType } from '../../Utils/utils'
 
@@ -16,10 +16,6 @@ export const DetailPage = () => {
 	const [isError, setIsError] = useState(false)
 	const [playModal, setPlayModal] = useState(false)
 
-	const setTitle = useMemo(() => (movie) => getTitleByType(type, movie), [
-		type,
-	])
-
 	useEffect(() => {
 		const getData = async () => {
 			try {
@@ -33,11 +29,13 @@ export const DetailPage = () => {
 			}
 		}
 		getData()
-	}, [id])
+	}, [id, type])
+
+	const setTitle = getTitleByType(type, movie)
 
 	const playHandler = useCallback(() => {
 		setPlayModal((prevState) => !prevState)
-	}, [id])
+	}, [])
 
 	if (isLoading) {
 		return <p>Loading ...</p>

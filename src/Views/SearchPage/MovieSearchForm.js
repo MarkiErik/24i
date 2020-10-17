@@ -10,6 +10,7 @@ export const MovieSearchForm = (props) => {
 	}
 
 	const handleInput = () => {
+		// as fake debounce
 		setTimeout(() => searchForMovie(), 500)
 	}
 	const searchForMovie = () => {

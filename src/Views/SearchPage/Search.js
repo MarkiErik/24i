@@ -14,7 +14,6 @@ export const Search = () => {
 				`${SEARCH_URL}&language=en-US&query=${data}&page=1&include_adult=false`
 			).then((response) => {
 				setSearchQuery(response.results)
-				console.log('res', response.results)
 			})
 		} catch (e) {
 			setError(e)
@@ -24,7 +23,7 @@ export const Search = () => {
 	return (
 		<div>
 			<MovieSearchForm onSearch={handleSearchFormSubmit} />
-			<MovieSearchList list={searchQuery} />
+			{!error && <MovieSearchList list={searchQuery} />}
 		</div>
 	)
 }
