@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from 'react'
+import React, { useEffect, useState, useCallback, useMemo } from 'react'
 import { useParams, useLocation } from 'react-router-dom'
 import { fetchData, getTitleByType } from '../../Utils/utils'
 
@@ -31,7 +31,9 @@ export const DetailPage = () => {
 		getData()
 	}, [id, type])
 
-	const setTitle = getTitleByType(type, movie)
+	const setTitle = useMemo(() => (movie) => getTitleByType(type, movie), [
+		type,
+	])
 
 	const playHandler = useCallback(() => {
 		setPlayModal((prevState) => !prevState)
